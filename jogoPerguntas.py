@@ -27,7 +27,7 @@ for pergunta in perguntas:
     resposta = input('Escolha uma opção:')
     if pergunta['Resposta'] == pergunta['Opções'][int(resposta)]:
         print(f"Acertou!\U0001F44D \n")
-        acertos = acertos+1 
+        acertos += 1
     else:
         print(f"Errou!\U0000274C \n")
        
