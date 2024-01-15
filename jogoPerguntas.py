@@ -25,10 +25,17 @@ for pergunta in perguntas:
     for indice, questao in enumerate(pergunta['Opções']):
         print(f"{indice}) {questao}")
     resposta = input('Escolha uma opção:')
-    if pergunta['Resposta'] == pergunta['Opções'][int(resposta)]:
-        print(f"Acertou!\U0001F44D \n")
-        acertos += 1
+
+    if resposta.isdigit():
+        resposta_int = int(resposta)
+    if resposta_int >=0 and resposta_int < len(pergunta['Opções']):
+        if pergunta['Resposta'] == pergunta['Opções'][resposta_int]:
+            print(f"Acertou!\U0001F44D \n")
+            acertos += 1
+        else:
+            print(f"Errou!\U0000274C \n")
     else:
         print(f"Errou!\U0000274C \n")
+
        
 print(f"Você acertou {acertos} de {len(perguntas)} perguntas.")
