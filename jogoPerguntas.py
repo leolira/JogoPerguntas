@@ -19,13 +19,13 @@ perguntas = [
 
 acertos = 0
 
-for questoes in perguntas:
+for pergunta in perguntas:
     
-    print(questoes['Pergunta'])
-    for alternativas in questoes['Opções']:
-        print(f"{questoes['Opções'].index(alternativas)}) {alternativas}")
+    print(pergunta['Pergunta'])
+    for indice, questao in enumerate(pergunta['Opções']):
+        print(f"{indice}) {questao}")
     resposta = input('Escolha uma opção:')
-    if questoes['Resposta'] == questoes['Opções'][int(resposta)]:
+    if pergunta['Resposta'] == pergunta['Opções'][int(resposta)]:
         print(f"Acertou!\U0001F44D \n")
         acertos = acertos+1 
     else:
